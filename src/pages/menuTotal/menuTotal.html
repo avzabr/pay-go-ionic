@@ -1,0 +1,23 @@
+<ion-content>
+  <ion-list-header>
+    Order Details
+  </ion-list-header>
+  <ion-card>
+    <ion-list>
+      <ion-item-divider color="light"></ion-item-divider>
+      <ion-item *ngFor="let item of selectedFood">
+        {{ item.name }}
+        <ion-note item-end>
+          {{ item.price }}
+        </ion-note>
+      </ion-item>
+    </ion-list>
+    <ion-card-header margin-top="10px">
+      <span>Total cost</span>
+      <span><ion-note>12$</ion-note></span>
+    </ion-card-header>
+    <ion-card-content>
+      The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
+    </ion-card-content>
+  </ion-card>
+</ion-content>

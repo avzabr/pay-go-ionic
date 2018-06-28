@@ -1,0 +1,8 @@
+{
+  "name": "pay-go-ionic",
+  "app_id": "8a3f88e3",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

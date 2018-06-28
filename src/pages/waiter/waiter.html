@@ -1,7 +1,31 @@
-<ion-content>
+<ion-content style="background-image: url('/assets/imgs/intro_bg1.jpg'); background-position: left">
   <ion-row justify-content-center align-items-center style="height: 100%">
     <ion-col text-center>
-      <button ion-button round (click)="handleNewGuestClick()">New Guest</button>
+      <button ion-button round (click)="handleNewGuestClick()" color="dark"
+              style="
+              font-size: 2.5rem;
+              border-radius: 40px;
+              background-color: #ffffffb5;
+              color: black;
+              height: 3em;
+              width: 10em;
+              border: 1px solid black;
+              box-shadow: 0 0 10px rgba(0,0,0,0.5);"
+      >New Guest
+      </button>
+      <button ion-button round (click)="handleNewGuestClick()"
+              style="
+              font-size: 2.5rem;
+              border-radius: 40px;
+              background-color: #ffffffb5;
+              color: black;
+              height: 3em;
+              width: 10em;
+              border: 1px solid black;
+              box-shadow: 0 0 10px rgba(0,0,0,0.5);"
+      >Orders
+      </button>
     </ion-col>
   </ion-row>
 </ion-content>
+

@@ -4,7 +4,11 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <button ion-button block color="danger" outline (click)="goToClientFlow()">Client</button>
-    <button ion-button block outline (click)="goToRestaurantFlow()">Restaurant</button>
+<ion-content padding class="home-page">
+  <ion-row justify-content-center align-items-center style="height: 100%">
+    <ion-col text-center>
+      <button ion-button color="dark" outline block (click)="goToClientFlow()" class="home-btn">Client</button>
+      <button ion-button color="dark" outline block (click)="goToRestaurantFlow()" class="home-btn">Restaurant</button>
+    </ion-col>
+  </ion-row>
 </ion-content>

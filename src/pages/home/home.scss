@@ -1,3 +1,16 @@
 page-home {
+  .home-page {
+    background-image: url(/assets/imgs/home_background.jpg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
 
+    .home-btn {
+      color: white;
+      border: 3px solid white;
+      font-weight: bold;
+      font-size: 20px;
+      padding: 10px;
+      margin: 25px 0;
+    }
+  }
 }

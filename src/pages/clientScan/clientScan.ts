@@ -36,6 +36,11 @@ export class ClientScan {
         content: 'Order is processing, please wait...'
       });
 
+      if(barcodeData.cancelled) {
+        loading.dismiss();
+        return;
+      }
+
       loading.present();
 
       this.http.get('https://wt-cc52e28fc0159cd485559c1c962c2ae9-0.sandbox.auth0-extend.com/menu?type=get', {}, {})

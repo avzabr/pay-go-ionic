@@ -1,10 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Generate Order</ion-title>
+  </ion-navbar>
+</ion-header>
+
 <ion-content style="background-color: #fffffff7">
   <ion-card>
     <ion-card-header>
       Order details
     </ion-card-header>
     <ion-list>
-      <ion-item style="padding-left: 40px" *ngFor="let item of selectedFood">
+      <ion-item style="padding-left: 40px" *ngFor="let item of selectedMeals">
         {{ item.name }}
         <ion-note item-end>
           {{ item.price }}
@@ -15,7 +21,7 @@
   <ion-card>
     <ion-card-content>
       <p><span style="font-size: large; font-weight: bold">Total</span>
-        <ion-note style="margin-top: 5px" float-right>{{ getTotal() }} $</ion-note>
+        <ion-note style="margin-top: 5px" float-right>{{ barcodeData.price }} $</ion-note>
       </p>
       <ion-note>*Tips are not included</ion-note>
     </ion-card-content>
@@ -25,7 +31,7 @@
       QR code for visitor:
     </ion-card-header>
     <ion-card-content>
-      <p></p>
+        <ngx-qrcode [qrc-value]="barcodeData"></ngx-qrcode>
     </ion-card-content>
   </ion-card>
 </ion-content>

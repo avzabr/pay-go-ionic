@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Review Your Order</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+
+    <img [src]="order.photo"/>
+
+    <ion-card-content>
+      <ion-card-title>
+        Your order
+      </ion-card-title>
+      <p>
+        Please review the meals you've ordered and then click "Pay" button.
+      </p>
+    </ion-card-content>
+
+    <ion-item *ngFor="let item of order.items">
+      <ion-icon name='ios-pizza-outline' item-start style="color: #d03e84"></ion-icon>
+      {{item.name}}
+    </ion-item>
+
+
+  </ion-card>
+
+</ion-content>

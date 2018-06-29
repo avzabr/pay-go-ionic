@@ -17,7 +17,7 @@ export class ClientOrder {
     this.order = orderData.menu;
   }
 
-showToast = text => {
+  showToast = text => {
     const toast = this.toastCtrl.create({
       message: JSON.stringify(text),
       duration: 5000

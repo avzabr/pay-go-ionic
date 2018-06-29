@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { HTTP } from '@ionic-native/http';
+import { LoadingController } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'menuTotal',
@@ -16,7 +18,9 @@ export class MenuTotal {
   constructor(
     public navCtrl: NavController, 
     params: NavParams,
-    private http: HTTP
+    private http: HTTP,
+    public loadingCtrl: LoadingController,
+    public toastCtrl: ToastController
   ) {
     if (params.get('food')) {
       this.selectedMeals = params.get('food').filter((item) => {
@@ -45,21 +49,31 @@ export class MenuTotal {
       photo: 'https://www.visitscotland.com/cms-images/destinations/fife/peat-inn-restaurant'
     };
 
+    const loading = this.loadingCtrl.create({
+      content: 'Order is generating, please wait...'
+    });
+
+    loading.present();
+
     this.http
       .get(`https://wt-cc52e28fc0159cd485559c1c962c2ae9-0.sandbox.auth0-extend.com/menu?type=set&menu=${encodeURI(JSON.stringify(order))}`, {}, {})
       .then(data => {
-        console.log(data);
-        //loading.dismiss();
-        this.navCtrl.push(ClientOrder, {
-          order: JSON.parse(data.data)
-        });
+        loading.dismiss();
       })
       .catch(err => {
-        //loading.dismiss();
-        //this.showToast(err);
+        loading.dismiss();
+        this.showToast(err);
       });
 
     this.barcodeData = JSON.stringify(order);
+  }
+
+  showToast = text => {
+    const toast = this.toastCtrl.create({
+      message: JSON.stringify(text),
+      duration: 5000
+    });
+    toast.present();
   }
 
   getTotal() {

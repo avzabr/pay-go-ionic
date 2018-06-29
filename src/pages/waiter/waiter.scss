@@ -1,13 +1,14 @@
 waiter {
     .waiter-home {
-        background-image: url('../assets/imgs/intro_bg1.jpg'); 
-        background-position: left
+        background-image: url(../assets/imgs/background_waiter.jpg); 
+        background-position: right;
+        background-size: auto 100%;
     }
     .waiter-btn {
       color: white;
       border: 3px solid white;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 30px;
       padding: 10px;
       margin: 25px 0;
     }

@@ -4,6 +4,10 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <button ion-button full (click)="scan()" ion-button>Scan Barcode</button>
+<ion-content padding class="scan-page" padding>
+  <ion-row justify-content-center align-items-center style="height: 100%">
+    <ion-col text-center>
+      <button ion-button color="dark" outline block (click)="scan()" class="scan-btn">Scan Barcode</button>
+    </ion-col>
+  </ion-row>
 </ion-content>

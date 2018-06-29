@@ -36,9 +36,7 @@ export class ClientScan {
         content: 'Order is processing, please wait...'
       });
 
-      this.showToast(barcodeData);
-
-      if(barcodeData.cancelled === 1) {
+      if(!!barcodeData.cancelled) {
         loading.dismiss();
         return;
       }

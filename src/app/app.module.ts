@@ -12,6 +12,7 @@ import { Waiter } from '../pages/waiter/waiter';
 import { Menu } from '../pages/menu/menu';
 import { MenuTotal } from '../pages/menuTotal/menuTotal';
 import { ClientOrder } from '../pages/clientOrder/clientOrder';
+import { SuccessPayment } from '../pages/success/success';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ClientOrder } from '../pages/clientOrder/clientOrder';
     Menu,
     MenuTotal,
     HomePage,
-    ClientOrder
+    ClientOrder,
+    SuccessPayment
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { ClientOrder } from '../pages/clientOrder/clientOrder';
     Menu,
     MenuTotal,
     HomePage,
-    ClientOrder
+    ClientOrder,
+    SuccessPayment
   ],
   providers: [
     StatusBar,

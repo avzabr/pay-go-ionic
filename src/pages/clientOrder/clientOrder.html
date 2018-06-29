@@ -4,7 +4,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
 
   <ion-card>
 
@@ -12,7 +12,7 @@
 
     <ion-card-content>
       <ion-card-title>
-        Your order
+        Your order is ready to pay
       </ion-card-title>
       <p>
         Please review the meals you've ordered and then click "Pay" button.
@@ -22,9 +22,25 @@
     <ion-item *ngFor="let item of order.items">
       <ion-icon name='ios-pizza-outline' item-start style="color: #d03e84"></ion-icon>
       {{item.name}}
+      <ion-note item-end>
+        {{item.price}}
+      </ion-note>
     </ion-item>
-
 
   </ion-card>
 
+  <ion-card>
+    <ion-card-content>
+      <p><span style="font-size: large; font-weight: bold">Total</span>
+        <ion-note style="margin-top: 5px" float-right>{{ order.price }} $</ion-note>
+      </p>
+      <ion-note>*Tips are not included</ion-note>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <button ion-button color="danger" outline block icon-start (click)="pay()" style="padding: 20px; font-size: 20px;">
+      <ion-icon name="logo-bitcoin"></ion-icon>Pay
+    </button>
+  </ion-item>
 </ion-content>

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
+import { LoadingController } from 'ionic-angular';
+import { SuccessPayment } from '../success/success';
 
 @Component({
   templateUrl: 'clientOrder.html'
@@ -11,7 +13,8 @@ export class ClientOrder {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public toastCtrl: ToastController    
+    public toastCtrl: ToastController,
+    public loadingCtrl: LoadingController,
   ) {
     const orderData = navParams.get('order');
     this.order = orderData.menu;
@@ -23,5 +26,17 @@ export class ClientOrder {
       duration: 5000
     });
     toast.present();
+  }
+
+  pay() {
+    const loader = this.loadingCtrl.create({
+      content: 'Payment is processing, please wait...'
+    });
+    loader.present();
+
+    setTimeout(() => {
+      loader.dismiss();
+      this.navCtrl.push(SuccessPayment);
+    }, 4000);
   }
 }
